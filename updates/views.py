@@ -51,6 +51,15 @@ class serializedDetailView(View):
         # }
         # json_data = serialze_data
         return HttpResponse(json_data, content_type='application/json')
+    
+    def post(self, request,*args, **kwargs):
+        return HttpResponse({}, content_type='application/json')
+    
+    def put(self, requests, *args, **kwargs):
+        return HttpResponse({}, content_type='application/json')
+    
+    def delete(self, request, *args, **kwargs):
+        return HttpResponse({}, content_type='application/json')
 
 
 class serializedListView(View):
@@ -60,3 +69,7 @@ class serializedListView(View):
         # serialize_data = serialize('json', obj, fields=('user', 'content'))
         # json_data = serialize_data
         return HttpResponse(json_data, content_type='application/json')
+    
+    def post(self, request, *args, **kwargs):
+        data = json.dumps({"dummy": 'unknowndata'})
+        return HttpResponse(data, content_type='application/json')

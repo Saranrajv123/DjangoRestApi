@@ -29,9 +29,12 @@ def createupdate():
 
     req = requests.post(BASE_URL + ENDPOINT, data=new_data)
     print("status code", req.status_code)
+    print('header', req.headers)
     if req.status_code == requests.codes.ok:
         # print(req.json())
         return req.json()
     return req.text
 
+
+createupdate()
 print('requests ', createupdate())
