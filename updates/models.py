@@ -23,7 +23,7 @@ class UpdateQuerySet(models.QuerySet):
     #     return json.dumps(final_array)
 
     def serialize(self):
-        load_list = list(self.values('user', 'content', 'image'))
+        load_list = list(self.values('user', 'content', 'image', 'id'))
         print(load_list)
         return json.dumps(load_list)
 
@@ -46,20 +46,22 @@ class Update(models.Model):
         return self.content or ""
 
     def serialize(self):
-        # json_data = serialize('json', [self], fields=['user', 'content', 'image'])
-        # load_data = json.loads(json_data)
-        # data = json.dumps(load_data[0]['fields'])
-        # print(load_data)
-        # print(data)
-        # return data
-        try:
-            image = self.image.url
-        except:
-            image = ""
+        json_data = serialize('json', [self], fields=['user', 'content', 'image', 'id'])
+        load_data = json.loads(json_data)
+        data = json.dumps(load_data[0]['fields'])
+        print(load_data)
+        print(data)
+        return data
 
-        data = {
-            'user': self.user,
-            'content': self.content,
-            'image': image,
-        }
-        return json.dumps(data)
+        # try:
+        #     image = self.image.url
+        # except:
+        #     image = ""
+
+        # data = {
+        #     'user': self.user,
+        #     'content': self.content,
+        #     'image': image,
+        # }
+        # print(data)
+        # return json.dumps(data)

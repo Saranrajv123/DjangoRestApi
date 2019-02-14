@@ -60,5 +60,3 @@ class serializedListView(View):
         # serialize_data = serialize('json', obj, fields=('user', 'content'))
         # json_data = serialize_data
         return HttpResponse(json_data, content_type='application/json')
-
-  
