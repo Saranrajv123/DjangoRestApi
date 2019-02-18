@@ -34,7 +34,8 @@ urlpatterns = [
     path('jsonview2', Json_CBV2.as_view(), name='json_view2'),
     path('jsonserializedeatil', serializedDetailView.as_view(), name='jsonserializedeatil'),
     path('json/example', json_example_view),
-    path('serialize/data', serializedListView.as_view(), name='serializedListView')
-
+    path('serialize/data', serializedListView.as_view(), name='serializedListView'),
+    path('api/', include('Status.api.urls'))
 
 ]
+

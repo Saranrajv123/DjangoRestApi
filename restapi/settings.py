@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # thirst party
+    'rest_framework',
+
     'updates.apps.UpdatesConfig',
+    'Status',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+

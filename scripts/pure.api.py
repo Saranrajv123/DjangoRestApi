@@ -26,6 +26,7 @@ def createupdate():
         'user': 1,
         'content': 'new content'
     }
+   
 
     req = requests.post(BASE_URL + ENDPOINT, data=new_data)
     print("status code", req.status_code)

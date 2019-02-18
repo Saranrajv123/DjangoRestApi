@@ -27,3 +27,10 @@ stream2 = BytesIO(json_data2)
 data2 = JSONParser(stream2)
 print(data2)
 
+data = {'user', 1}
+serializer = StatusSerializer(data=data)
+
+
+
+
+ 
